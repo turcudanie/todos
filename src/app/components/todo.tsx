@@ -1,7 +1,10 @@
+'use client'
 import { useState } from "react";
+import { TodoProps } from "../types/todos";
+import Link from "next/link";
 
 
-const Todo = ({todo, deleteTodoItem, update}: TodoProps) => {
+const Todo = ({todo, deleteTodoItem, update, editTodoItem}: TodoProps) => {
     const [isChecked, setIsChecked] = useState(false);
 
     const handleCheckboxChange = () => {
@@ -21,9 +24,14 @@ const Todo = ({todo, deleteTodoItem, update}: TodoProps) => {
                 <div className={`text-xl font-bold text-left overflow-hidden overflow-ellipsis ${isChecked ? 'line-through' : ''}`} style={{wordWrap: 'break-word'}}>{todo?.todo}</div>
             </div>
             <button onClick={()=>deleteTodoItem(todo?.id)} className="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+            <Link href='/edit'><button onClick={()=>editTodoItem(todo?.id)} className="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button></Link>
         </div>
         </div>
     );
 }
 
 export default Todo;
+
+
+
+

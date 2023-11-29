@@ -1,7 +1,9 @@
+import { todos } from "@prisma/client";
+
 interface TodosArray {
-    id: number,
-    todo: string,
-    checked: boolean,
+    id: number;
+    todo: string;
+    checked: boolean;
 }
 
 interface ModalInputProps{
@@ -12,4 +14,6 @@ interface TodoProps{
     todo: TodosArray;
     deleteTodoItem: (id: number) => void;
     update: (id: number) => void;
+    editTodoItem: (id: number)=> void;
 }
+

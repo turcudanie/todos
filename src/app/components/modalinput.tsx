@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Todo from './todo';
+import { ModalInputProps } from '../types/todos';
 const Modalinput = ({ create }: ModalInputProps) => {
 
     const [todoItem, setTodoItem] = useState<string>("")
@@ -11,7 +11,7 @@ const Modalinput = ({ create }: ModalInputProps) => {
     const handleAddTodo = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         create({
-            id: Math.round(Math.random() * 100000),
+            id: Math.round(Math.random() * 10),
             todo: todoItem.trim(),
             checked: false
         })
