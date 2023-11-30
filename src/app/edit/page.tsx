@@ -14,7 +14,7 @@ const page = () => {
 
 
   function editTodo(): void {
-    throw new Error('Function not implemented.')
+    
   }
 
   return (
