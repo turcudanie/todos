@@ -13,7 +13,6 @@ import Updateinput from './components/updateinput';
 
 export default function Home() {
   const [todos, setTodos] = useState<TodosArray[]>([]);
-  const [isEditing, setIsEditing] = useState(-1);
 
 
   const URL="http://localhost:3000"
@@ -75,26 +74,7 @@ export default function Home() {
     // console.log(getTodos);
   }, [])
 
-  const editTodo = async (id: number )=>
-  {
-    setIsEditing(id)
-    // if (isEditing) {
-    //   // Replace with your actual save logic
-    //   const response = await fetch('${URL}/api/todos', {
-    //     method: 'PUT',
-    //     body: JSON.stringify({
-    //       id, 
-    //     })
-    //   });
-
-    //   if (!response.ok) {
-    //     console.error('Failed to save data');
-    //   }
-    // }
-
-    // setIsEditing(!isEditing);
-  };
-
+  
 
 
 
@@ -109,10 +89,11 @@ export default function Home() {
         <Suspense fallback={<div>Loading...</div>}>
 
           {todos.map((todo, index) => (  
-            <Todo key={index} {...todo} todo={todo} deleteTodoItem={deleteTodo} update={updateTodo} editTodoItem={editTodo} />
+            <Todo key={index} {...todo} todo={todo} deleteTodoItem={deleteTodo} update={updateTodo}  />
           ))}
         </Suspense >
       </div>
+      
     
 
     </>

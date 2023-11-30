@@ -1,13 +1,27 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Updateinput from '../components/updateinput'
+import EditInputProps from "../types/todos"
+
+
+
 
 
 const page = () => {
+
+
+
+
+
+  function editTodo(): void {
+    throw new Error('Function not implemented.')
+  }
+
   return (
     <>
-    <div><Updateinput/></div>
+
+      <Updateinput  edit={editTodo}  />
     </>
   )
 }
-
-export default page
+export default page;
